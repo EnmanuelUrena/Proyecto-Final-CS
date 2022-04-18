@@ -1,0 +1,31 @@
+﻿@model List<BusinessObject.Lists>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listas del usuario</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var list in Model)
+            {
+        <tr>
+            <td>@list.ListID</td>
+            <td>@list.Name</td>
+            <td>
+                <button type="button" class="btn btn-primary">Editar</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger">Borrar</button>
+            </td>
+        </tr>
+            }
+    </tbody>
+</table>
+
