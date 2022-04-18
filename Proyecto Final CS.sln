@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proyecto Final BO", "Proyec
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proyecto Final Web", "Proyecto Final Web", "{CF2A68CE-F48D-433C-9171-33AD0891E141}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListWeb", "TodoListWeb\TodoListWeb.csproj", "{F028654B-A7CD-4EF5-A0B5-E63FFA2FD904}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,12 +21,17 @@ Global
 		{F93B5243-E7EC-4621-A622-2C148D77C0C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F93B5243-E7EC-4621-A622-2C148D77C0C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F93B5243-E7EC-4621-A622-2C148D77C0C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F028654B-A7CD-4EF5-A0B5-E63FFA2FD904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F028654B-A7CD-4EF5-A0B5-E63FFA2FD904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F028654B-A7CD-4EF5-A0B5-E63FFA2FD904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F028654B-A7CD-4EF5-A0B5-E63FFA2FD904}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F93B5243-E7EC-4621-A622-2C148D77C0C7} = {A2E6C54E-54D3-47C8-9601-7F00518DCC22}
+		{F028654B-A7CD-4EF5-A0B5-E63FFA2FD904} = {CF2A68CE-F48D-433C-9171-33AD0891E141}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E8837A3-F52D-439A-90A0-1977978B3CCE}
