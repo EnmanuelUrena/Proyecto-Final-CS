@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proyecto Final WebApp", "Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListNetWeb", "TodoListNetWeb\TodoListNetWeb.csproj", "{165FA2E4-0557-462D-8156-A4CD5BA9F1B4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proyecto Final Windows", "Proyecto Final Windows", "{C0E2E5E6-72A8-49C8-ACE4-BEEFF295849C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListDesktop", "TodoListDesktop\TodoListDesktop.csproj", "{48FC9935-75D6-42F6-8FBF-38F708B1D3C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{165FA2E4-0557-462D-8156-A4CD5BA9F1B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{165FA2E4-0557-462D-8156-A4CD5BA9F1B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{165FA2E4-0557-462D-8156-A4CD5BA9F1B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48FC9935-75D6-42F6-8FBF-38F708B1D3C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48FC9935-75D6-42F6-8FBF-38F708B1D3C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48FC9935-75D6-42F6-8FBF-38F708B1D3C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48FC9935-75D6-42F6-8FBF-38F708B1D3C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F93B5243-E7EC-4621-A622-2C148D77C0C7} = {A2E6C54E-54D3-47C8-9601-7F00518DCC22}
 		{165FA2E4-0557-462D-8156-A4CD5BA9F1B4} = {599A87E9-0EEB-44BC-907D-0DCD56FD4CEA}
+		{48FC9935-75D6-42F6-8FBF-38F708B1D3C2} = {C0E2E5E6-72A8-49C8-ACE4-BEEFF295849C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E8837A3-F52D-439A-90A0-1977978B3CCE}
