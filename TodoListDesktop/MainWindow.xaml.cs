@@ -28,6 +28,8 @@ namespace TodoListDesktop
             InitializeComponent();
         }
 
+        public static Users logedUser;
+
         private void Btn_RegistrarUsuario_Click(object sender, RoutedEventArgs e)
         {
             RegistrarUsuario registrar = new RegistrarUsuario();
@@ -60,7 +62,10 @@ namespace TodoListDesktop
             {
                 var user = db.Users.Single(b => b.Username == username && b.Password == password);
                 if (user != null)
+                {
+                    logedUser = user;
                     result = true;
+                }
             }
             catch
             {
