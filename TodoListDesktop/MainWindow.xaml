@@ -26,6 +26,7 @@
                 <SolidColorBrush Color="#FFFBFBFB" Opacity="0.6"/>
             </Grid.Background>
             <TextBlock x:Name="TextBlock_Uso" Margin="10,71,10,27" TextWrapping="Wrap" FontFamily="Cascadia Code"><Run Text="1. Inicie sesion con su usuario y contraseña (si no tiene cree una)"/><LineBreak/><Run/><LineBreak/><Run Text="2. Cree una lista o use alguna lista predeterminada."/><LineBreak/><Run/><LineBreak/><Run Text="3. Dentro de la lista, usted puede crear, modificar y agregar productos a su lista"/></TextBlock>
+            <Label x:Name="Label_Uso" Content="Uso de aplicacion" Margin="18,27,18,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold"/>
         </Grid>
         <Grid x:Name="Inicio" Margin="328,0,222,0" Height="265" VerticalAlignment="Center" >
             <Grid.Background>
@@ -77,5 +78,7 @@
                 <SolidColorBrush Color="#FFFB0000" Opacity="0.8"/>
             </Label.Foreground>
         </Label>
+        <Image x:Name="img_intec" HorizontalAlignment="Left" Height="94" Margin="137,18,0,0" VerticalAlignment="Top" Width="87" Source="/Daco_5843016.png" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="87" Margin="811,18,0,0" VerticalAlignment="Top" Width="91"/>
     </Grid>
 </Window>

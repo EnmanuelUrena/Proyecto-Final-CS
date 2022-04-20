@@ -18,7 +18,6 @@ namespace BusinessObject
         public Nullable<int> ListID { get; set; }
         public string Name { get; set; }
         public Nullable<int> Quantity { get; set; }
-    
         public virtual Lists Lists { get; set; }
     }
 }

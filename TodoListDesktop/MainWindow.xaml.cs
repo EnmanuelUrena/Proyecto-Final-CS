@@ -21,7 +21,7 @@ namespace TodoListDesktop
     /// </summary>
     public partial class MainWindow : Window
     {
-        TodoListDBEntities db = new TodoListDBEntities();
+        public static TodoListDBEntities db = new TodoListDBEntities();
 
         public MainWindow()
         {
