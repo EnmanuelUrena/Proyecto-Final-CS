@@ -6,6 +6,16 @@
         xmlns:local="clr-namespace:TodoListDesktop"
         mc:Ignorable="d"
         Title="TodoListApp" Height="576" Width="1024">
+    <Window.Resources>
+        <DataTemplate x:Key="ListTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Path=Name}" Width="540"/>
+                <Button x:Name="Btn_DeleteList" Content="X" Height="40" Width="40" Background="#FFFB3232" FontFamily="Sans Serif Collection" Foreground="White" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0,0,0,0" Click="Btn_DeleteList_Click"/>
+                <Label Width="10"/>
+                <Button x:Name="Btn_UpdateList" Content="Update" Height="40" Width="65" Background="#0077FF" FontFamily="Sans Serif Collection" Foreground="White" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0,0,0,0" Click="Btn_UpdateList_Click"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Canvas x:Name="Background">
             <Canvas.Background>
@@ -13,16 +23,14 @@
             </Canvas.Background>
             <Label x:Name="Label_Name" Content="" Canvas.Left="22" Canvas.Top="133" HorizontalAlignment="Left" VerticalAlignment="Top" Width="186" FontFamily="Sans Serif Collection" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Center" FontSize="20" FontStyle="Italic"/>
             <Label x:Name="Label_WindowTitle" Content="Home" Canvas.Left="257" FontFamily="Sans Serif Collection" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="268"/>
-            <Label x:Name="Label_WindowSection" Content="My Lists" Canvas.Left="275" FontFamily="Sans Serif Collection" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="74" Width="250"/>
+            <Label x:Name="Label_WindowSection" Content="My Lists" Canvas.Left="275" FontFamily="Sans Serif Collection" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="74" Width="296"/>
             <Button x:Name="Btn_Home" Content="Home" Canvas.Top="197" HorizontalAlignment="Center" VerticalAlignment="Center" Width="229" Height="40" BorderThickness="0,0,0,0" Background="{x:Null}" Click="Btn_Home_Click" FontFamily="Sans Serif Collection" Foreground="White" FontSize="16" FontWeight="Bold"/>
             <Button x:Name="Btn_Products" Content="Products" Canvas.Top="253" Width="228" Height="40" BorderThickness="0,0,0,0" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="1" Click="Btn_Products_Click" FontFamily="Sans Serif Collection" FontSize="16" FontWeight="Bold" Foreground="White"/>
             <Button x:Name="Btn_Profile" Content="Profile" Canvas.Top="309" Width="228" Height="40" BorderThickness="0,0,0,0" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="1" Click="Btn_Profile_Click" FontFamily="Sans Serif Collection" Foreground="#FFFBFBFB" FontSize="16" FontWeight="Bold"/>
             <Button x:Name="Btn_Settings" Content="Settings" Canvas.Top="366" Width="228" Height="40" BorderThickness="0,0,0,0" Background="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="1" Click="Btn_Settings_Click" FontFamily="Sans Serif Collection" Foreground="White" FontSize="16" FontWeight="Bold"/>
-            <ListBox x:Name="ListBox_MyList" Height="335" Width="738" Canvas.Left="257" Canvas.Top="186" HorizontalAlignment="Left" VerticalAlignment="Center" Background="{x:Null}" BorderThickness="0,0,0,0" FontFamily="Sans Serif Collection" FontSize="16" FontWeight="Bold">
-
-            </ListBox>
+            <ListBox x:Name="ListBox_MyList" ItemTemplate="{StaticResource ListTemplate}" Height="335" Width="738" Canvas.Left="257" Canvas.Top="186" HorizontalAlignment="Left" VerticalAlignment="Center" Background="{x:Null}" BorderThickness="0,0,0,0" FontFamily="Sans Serif Collection" FontSize="16" FontWeight="Bold" SelectionChanged="ListBox_MyList_SelectionChanged"/>
             <Button x:Name="Btn_AddList" Content="Add New List" Canvas.Left="814" Canvas.Top="150" HorizontalAlignment="Left" VerticalAlignment="Center" Width="101" Background="{x:Null}" BorderBrush="#FFE274EA" Height="26" FontFamily="Sans Serif Collection" FontWeight="Normal" Click="Btn_AddList_Click"/>
-            <TextBox x:Name="TextBox_NewList" Canvas.Left="275" TextWrapping="Wrap" Canvas.Top="148" Width="514" Background="{x:Null}" FontFamily="Sans Serif Collection" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="#FFE274EA" Height="30"/>
+            <TextBox x:Name="TextBox_NewList" Canvas.Left="275" TextWrapping="Wrap" Canvas.Top="148" Width="514" Background="{x:Null}" FontFamily="Sans Serif Collection" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="#FFE274EA" Height="30" />
         </Canvas>
     </Grid>
 </Window>

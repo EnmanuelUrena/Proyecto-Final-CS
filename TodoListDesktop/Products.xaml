@@ -1,0 +1,36 @@
+﻿<Window x:Class="TodoListDesktop.Products"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TodoListDesktop"
+        mc:Ignorable="d"
+        Title="Products" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="ProductTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Path=Name}" Width="280"/>
+                <Label Content="{Binding Path=Quantity}" Width="50"/>
+                <Label Width="10"/>
+
+                <Button x:Name="Btn_DeleteProduct" Content="X" Height="40" Width="40" Background="#FFFB3232" FontFamily="Sans Serif Collection" Foreground="White" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0,0,0,0" Click="Btn_DeleteProduct_Click"/>
+                <Label Width="10"/>
+                <Button x:Name="Btn_UpdateProduct" Content="Update" Height="40" Width="65" Background="#0077FF" FontFamily="Sans Serif Collection" Foreground="White" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0,0,0,0" Click="Btn_UpdateList_Click"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Canvas x:Name="Background">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/Component 1 (3).png"/>
+            </Canvas.Background>
+            <Label x:Name="Label_Name" Content="" Canvas.Top="107" Width="179" FontFamily="Sans Serif Collection" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Center" FontSize="20" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.565" Height="42"/>
+            <Label x:Name="Label_WindowTitle" Content="" Canvas.Left="179" FontFamily="Sans Serif Collection" FontSize="20" FontWeight="Bold" Width="589" HorizontalAlignment="Left" VerticalAlignment="Center" Height="52"/>
+            <Label x:Name="Label_WindowSection" Content="My Products" Canvas.Left="204" FontFamily="Sans Serif Collection" FontSize="20" FontWeight="Bold" Canvas.Top="52" Width="243" HorizontalAlignment="Center" VerticalAlignment="Center" Height="46"/>
+            <Button x:Name="Btn_AddProduct" Content="Add New Product" Canvas.Left="675" Canvas.Top="115" Width="93" Background="{x:Null}" BorderBrush="#FFE274EA" Height="26" FontFamily="Sans Serif Collection" FontWeight="Normal" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Click="Btn_AddProduct_Click"/>
+            <TextBox x:Name="TextBox_NewProduct" Canvas.Left="218" TextWrapping="Wrap" Canvas.Top="113" Width="331" Background="{x:Null}" FontFamily="Sans Serif Collection" FontSize="16" BorderBrush="#FFE274EA" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <ListBox x:Name="ListBox_MyProduct" Height="234" ItemTemplate="{StaticResource ProductTemplate}" Width="550" Canvas.Left="218" Canvas.Top="157" Background="{x:Null}" BorderThickness="0,0,0,0" FontFamily="Sans Serif Collection" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <ComboBox x:Name="ComboBox_Quantity" Height="32" Canvas.Left="569" Canvas.Top="113" Width="50" BorderThickness="0,0,0,0" FontFamily="Sans Serif Collection" FontSize="12" Foreground="Black" SelectionChanged="ComboBox_Quantity_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Text="1" IsEditable="True"/>
+        </Canvas>
+    </Grid>
+</Window>

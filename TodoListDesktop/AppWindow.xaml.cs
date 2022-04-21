@@ -21,6 +21,7 @@ namespace TodoListDesktop
     /// </summary>
     public partial class AppWindow : Window
     {
+        public static Lists selectedList = new Lists();
         public AppWindow()
         {
             InitializeComponent();
@@ -30,14 +31,9 @@ namespace TodoListDesktop
 
         private void CargarLista()
         {
-            var UserList = MainWindow.logedUser.Lists.ToList();
-            List<string> list = new List<string>();
-            foreach (var item in UserList)
-            {
-                list.Add(item.Name);
-            }
-            list.Reverse();
-            ListBox_MyList.ItemsSource = list;
+            ListBox_MyList.ItemsSource = null;
+            var UserList = MainWindow.logedUser.Lists;
+            ListBox_MyList.ItemsSource = UserList;
         }
 
         private void Btn_Home_Click(object sender, RoutedEventArgs e)
@@ -79,6 +75,65 @@ namespace TodoListDesktop
             newList.Users = MainWindow.logedUser;
             MainWindow.db.Lists.Add(newList);
             MainWindow.db.SaveChanges();
+        }
+
+        private void ListBox_MyList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {            
+            var curItemIndex = ListBox_MyList.SelectedIndex;
+            var UserList = MainWindow.logedUser.Lists.ToList();
+            try
+            {
+                selectedList = UserList[curItemIndex];
+                Products products = new Products();
+                products.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void Btn_DeleteList_Click(object sender, RoutedEventArgs e)
+        {
+            Button cmd = (Button)sender;
+            var list = cmd.DataContext;
+            bool erased = false;
+            try
+            {
+                MainWindow.db.Lists.Remove((Lists)list);
+                MainWindow.db.SaveChanges();
+                erased = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se puede eliminar una lista con productos, primero elimine los productos dentro de la lista", "Delete Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            if (erased)
+            {
+                CargarLista();
+            }
+        }
+
+        private void Btn_UpdateList_Click(object sender, RoutedEventArgs e)
+        {
+            Button cmd = (Button)sender;
+            bool updated = false;
+            try
+            {
+                var updateList = (Lists)cmd.DataContext;
+                var list = MainWindow.db.Lists.Single(a => a.ListID == updateList.ListID);
+                list.Name = TextBox_NewList.Text;
+                MainWindow.db.SaveChanges();
+                updated = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se ha podido modificar la lista", "Update Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            if (updated)
+            {
+                CargarLista();
+            }
         }
     }
 }
