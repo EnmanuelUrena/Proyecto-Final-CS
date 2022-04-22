@@ -40,25 +40,51 @@ namespace TodoListDesktop
         {
             Label_WindowTitle.Content = "Home";
             Label_WindowSection.Content = "My Lists";
+            TextBox_NewList.IsEnabled = true;
+            Btn_AddList.IsEnabled = true;
+            TextBox_NewList.Visibility = Visibility.Visible;
+            Btn_AddList.Visibility = Visibility.Visible;
+            CargarLista();
         }
 
         private void Btn_Products_Click(object sender, RoutedEventArgs e)
         {
             Label_WindowTitle.Content = "Products";
             Label_WindowSection.Content = "All Products";
-            
+            ListBox_MyList.ItemsSource = null;
+            TextBox_NewList.IsEnabled = false;
+            Btn_AddList.IsEnabled = false;
+            TextBox_NewList.Visibility = Visibility.Collapsed;
+            Btn_AddList.Visibility = Visibility.Collapsed;
+            CargarProductos();
+        }
+
+        private void CargarProductos()
+        {
+            var products = MainWindow.db.Product.ToList();
+            ListBox_MyList.ItemsSource = products;
         }
 
         private void Btn_Profile_Click(object sender, RoutedEventArgs e)
         {
             Label_WindowTitle.Content = "Profile";
             Label_WindowSection.Content = "My Profile";
+            ListBox_MyList.ItemsSource = null;
+            TextBox_NewList.IsEnabled = false;
+            Btn_AddList.IsEnabled = false;
+            TextBox_NewList.Visibility = Visibility.Collapsed;
+            Btn_AddList.Visibility = Visibility.Collapsed;
         }
 
         private void Btn_Settings_Click(object sender, RoutedEventArgs e)
         {
             Label_WindowTitle.Content = "Settings";
             Label_WindowSection.Content = "My Settings";
+            ListBox_MyList.ItemsSource = null;
+            TextBox_NewList.IsEnabled = false;
+            Btn_AddList.IsEnabled = false;
+            TextBox_NewList.Visibility = Visibility.Collapsed;
+            Btn_AddList.Visibility = Visibility.Collapsed;
         }
         private void Btn_AddList_Click(object sender, RoutedEventArgs e)
         {

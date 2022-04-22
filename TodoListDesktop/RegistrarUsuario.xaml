@@ -25,7 +25,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.8"/>
             </Grid.Background>
-            <Label x:Name="Label_Registro" Content="Registro de Usuario" Margin="0,10,0,0" FontFamily="Cascadia Code" FontSize="18" HorizontalAlignment="Center" Width="212" Height="27" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label x:Name="Label_Registro" Content="Registro de Usuario" Margin="0,10,0,0" FontFamily="Cascadia Code" FontSize="18" HorizontalAlignment="Center" Width="212" Height="35" VerticalAlignment="Top" FontWeight="Bold"/>
             <Label x:Name="Label_Name" Content="Nombre:" HorizontalAlignment="Left" Height="27" Margin="24,56,0,0" VerticalAlignment="Top" Width="78" FontFamily="Cascadia Code" FontWeight="Bold"/>
             <TextBox x:Name="TextBox_Nombre" Margin="113,61,76,0" TextWrapping="Wrap" TextAlignment="Left" FontFamily="Cascadia Code" FontSize="8" BorderThickness="0,0,0,0" Height="18" VerticalAlignment="Top">
                 <TextBox.Resources>
@@ -59,7 +59,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label x:Name="Label_Password" Content="Password:" HorizontalAlignment="Left" Margin="24,259,0,0" Width="78" FontFamily="Cascadia Code" Height="25" VerticalAlignment="Top" FontWeight="Bold"/>
-            <PasswordBox x:Name="PasswordBox_Password" HorizontalAlignment="Left" Margin="113,262,0,0" VerticalAlignment="Top" Width="465" FontFamily="Cascadia Code" BorderThickness="0,0,0,0" Height="18" />
+            <PasswordBox x:Name="PasswordBox_Password" HorizontalAlignment="Left" Margin="113,262,0,0" VerticalAlignment="Top" Width="450" FontFamily="Cascadia Code" BorderThickness="0,0,0,0" Height="18" />
             <Button x:Name="Btn_RegistrarUsuario" Content="Registrar Usuario" Margin="178,305,178,0" Background="#FFEE5C5C" BorderThickness="0,0,0,0" FontFamily="Cascadia Code" FontSize="8" Foreground="White" Height="23" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.51,1.98" Click="Btn_RegistrarUsuario_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">

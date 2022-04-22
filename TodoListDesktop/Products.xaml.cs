@@ -131,7 +131,7 @@ namespace TodoListDesktop
                productquantity = Convert.ToInt32(quantity);
                if (cmd.Text != null)
                {
-                 cmd.Text = quantity.ToString();
+                    cmd.Text = (string)quantity;
                }
             }
             catch 

@@ -30,14 +30,30 @@ namespace TodoListDesktop
         private void Btn_RegistrarUsuario_Click(object sender, RoutedEventArgs e)
         {
             MainWindow inicio = new MainWindow();
-            var name = TextBox_Nombre.Text;
-            var lastname = TextBox_Apellido.Text;
-            var email = TextBox_Email.Text;
-            var username = TextBox_Username.Text;
-            var password = PasswordBox_Password.Password;
-            Registrar(name, lastname, email, username, password);
-            Close();
-            inicio.Show();
+            try
+            {
+                if(TextBox_Nombre.Text.Length < 3 || TextBox_Apellido.Text.Length < 3 || TextBox_Email.Text.Length < 6 || TextBox_Username.Text.Length < 5 || PasswordBox_Password.Password.Length < 5)
+                {
+                    throw new Exception();
+                }
+                else
+                {
+                    var name = TextBox_Nombre.Text;
+                    var lastname = TextBox_Apellido.Text;
+                    var email = TextBox_Email.Text;
+                    var username = TextBox_Username.Text;
+                    var password = PasswordBox_Password.Password;
+                    Registrar(name, lastname, email, username, password);
+                    Close();
+                    inicio.Show();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se puede registrar un usuario sin haber llenado los campos requeridos", "Register Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+            
 
         }
 
